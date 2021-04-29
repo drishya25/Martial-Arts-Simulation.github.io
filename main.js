@@ -71,6 +71,8 @@ loadImages((images)=>{
         let selectedAnimation;
         if(queuedAnimation.length===0){
             selectedAnimation="idle";
+            let audios=new Audio();
+            audios.play();
         }
         else{
             selectedAnimation=queuedAnimation.shift();
