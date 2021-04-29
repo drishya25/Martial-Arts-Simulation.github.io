@@ -40,12 +40,18 @@ let loadImages=(callback)=>{
     });  
   });
 };
-
+let x=400, y=400;
 let animate=(ctxt,images,animation,callback)=>{
     images[animation].forEach((image,index)=>{
         setTimeout(()=>{
-            ctxt.clearRect(400,400,400,400);
-            ctxt.drawImage(image,400,400,400,400);
+            ctxt.clearRect(x,y,400,400);
+            if(animation==="backward"){
+                x=x-10;
+            }
+            else if(animation==="forward"){
+                x=x+10;
+            }
+            ctxt.drawImage(image,x,y,400,400);
         }, index*100);
     });
     setTimeout(callback, images[animation].length*100);
