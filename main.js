@@ -44,6 +44,7 @@ let x=400, y=430;
 let animate=(ctxt,images,animation,callback)=>{
     images[animation].forEach((image,index)=>{
         setTimeout(()=>{
+            let audio;
             ctxt.clearRect(x,y,400,400);
             if(animation==="backward"){
                 x=x-10;
@@ -70,8 +71,6 @@ loadImages((images)=>{
         let selectedAnimation;
         if(queuedAnimation.length===0){
             selectedAnimation="idle";
-            let audios=new Audio();
-            audios.play();
         }
         else{
             selectedAnimation=queuedAnimation.shift();
