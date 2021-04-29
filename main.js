@@ -56,8 +56,8 @@ let animate=(ctxt,images,animation,callback)=>{
                  audio=new Audio("kick.mp3");
             }
             ctxt.drawImage(image,x,y,400,400);
-            if(audio.play().duration===1)
-                audio.stop();
+            while(audio.play().duration<0.001);
+                //audio.stop();
             
         }, index*100);
     });
