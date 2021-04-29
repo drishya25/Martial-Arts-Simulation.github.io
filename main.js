@@ -50,8 +50,13 @@ let animate=(ctxt,images,animation,callback)=>{
             }
             else if(animation==="forward"){
                 x=x+10;
+            }else if(animation==="punch"){
+                 audio=new Audio('punch.mp3');
+            }else if(animation==="kick"){
+                 audio=new Audio('kick.mp3');
             }
             ctxt.drawImage(image,x,y,400,400);
+            audio.play()l
         }, index*100);
     });
     setTimeout(callback, images[animation].length*100);
