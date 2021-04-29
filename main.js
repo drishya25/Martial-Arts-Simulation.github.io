@@ -44,23 +44,17 @@ let x=400, y=430;
 let animate=(ctxt,images,animation,callback)=>{
     images[animation].forEach((image,index)=>{
         setTimeout(()=>{
-            let audio;
             ctxt.clearRect(x,y,400,400);
             if(animation==="backward"){
                 x=x-10;
             }
             else if(animation==="forward"){
                 x=x+10;
-            }else if(animation==="punch"){
-                 audio=new Audio("punch.mp3");
-            }else if(animation==="kick"){
-                 audio=new Audio("kick.mp3");
             }
             ctxt.drawImage(image,x,y,400,400);
         }, index*100);
     });
     setTimeout(callback, images[animation].length*100);
-     
 };
 
 loadImages((images)=>{
