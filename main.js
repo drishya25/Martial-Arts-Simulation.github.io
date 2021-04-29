@@ -40,7 +40,7 @@ let loadImages=(callback)=>{
     });  
   });
 };
-let x=500, y=1200;
+let x=600, y=1200;
 let animate=(ctxt,images,animation,callback)=>{
     images[animation].forEach((image,index)=>{
         setTimeout(()=>{
