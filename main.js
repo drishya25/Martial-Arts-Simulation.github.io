@@ -51,14 +51,9 @@ let animate=(ctxt,images,animation,callback)=>{
             }
             else if(animation==="forward"){
                 x=x+10;
-            }else if(animation==="punch"){
-                audio=new Audio('punch.mp3');
-            }else if(animation==="kick"){
-                audio=new Audio('kick.mp3');
             }
             ctxt.drawImage(image,x,y,400,400);
-            audio.play();
-            audio.stop();
+            
         }, index*100);
     });
     setTimeout(callback, images[animation].length*100);
@@ -79,9 +74,13 @@ loadImages((images)=>{
     };
     aux();
     document.getElementById("kick").onclick=()=>{
+        let audio = new Audio('kick.mp3');
+        audio.play();
         queuedAnimation.push("kick");
     };
     document.getElementById("punch").onclick=()=>{
+        let audio = new Audio('punch.mp3');
+        audio.play();
         queuedAnimation.push("punch");
     };
     document.getElementById("backward").onclick=()=>{
@@ -101,8 +100,12 @@ loadImages((images)=>{
         }else if(key==="ArrowRight"){
             queuedAnimation.push("forward");
         }else if(key==="ArrowUp"){
+            let audio = new Audio('punch.mp3');
+            audio.play();
             queuedAnimation.push("punch");
         }else if(key==="ArrowDown"){
+            let audio = new Audio('kick.mp3');
+            audio.play();
             queuedAnimation.push("kick");
         }else if(key==="Enter"){
             queuedAnimation.push("block");
