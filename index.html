@@ -1,8 +1,12 @@
 <h1 style="margin-left: 60px; font-family: cursive; color: aliceblue">
   Martial Arts Sim
-  <audio controls style="margin-left: 1230px">
+  <audio id="main_sound" controls style="margin-left: 1230px">
     <source src="main_theme.mp3" type="audio/mpeg" />
   </audio>
+  <script>
+    var audio = document.getElementById("main_sound");
+    audio.volume = 0.1;
+  </script>
 </h1>
 
 <body style="background-color: black">
